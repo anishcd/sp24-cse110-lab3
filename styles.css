@@ -130,3 +130,82 @@ header {
     width: 100%; /* Full width of its container */
     height: 150px; /* Fixed height for aesthetic uniformity */
 }
+
+
+/* Universal Selector: Applying box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Class Selector: Styling elements with 'details' class */
+.details {
+    font-style: italic;
+    color: #31708f;
+}
+
+/* ID Selector: Styling an element with specific ID 'main-header' */
+#main-header {
+    background-color: #e3dada;
+}
+
+/* Element Selector: Styling all <article> elements */
+article {
+    border: 1px solid #dddddd;
+    padding: 20px;
+}
+
+/* Attribute Selector: Targeting elements with a specific attribute */
+input[type="text"] {
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+
+/* Pseudo-class Selector: Change color on hover for paragraphs */
+p:hover {
+    background-color: #f4f4f4;
+}
+
+/* Selector List: Styling h1, h2, and h3 with the same styles */
+h1, h2, h3 {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Descendant Combinator: Styling <a> elements within .navigation */
+.navigation a {
+    color: #0044cc;
+}
+
+/* Child Combinator: Specifically styling direct child <ul> elements within .navigation */
+.navigation > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Sibling Combinator: Styling elements that share the same parent with .intro */
+.intro ~ p {
+    color: #555;
+}
+
+/* Adjacent Sibling Combinator: Styling the first <p> immediately after .intro */
+.intro + p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Combining Two Selectors: Styling <p> elements with 'highlight' class */
+p.highlight {
+    background-color: yellow;
+}
+
+/* New Selector: Using :has() */
+section:has(> header) {
+    border: 3px solid red;
+}
+
+/* Nested Selector Example */
+.navigation li:hover > a {
+    color: red;
+}
+
