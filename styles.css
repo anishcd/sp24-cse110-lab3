@@ -1,0 +1,132 @@
+/* Main stylesheet for Meeting Minutes, includes extensive comments for clarity */
+
+/* Importing a third-party font for styling text */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Root level CSS variables with a fallback example */
+:root {
+    --main-bg-color: #f0f0f0;
+    --accent-color: color(display-p3 0.25 0.45 0.75 / 1); /* Wider-gamut color example */
+    --text-color: #093553; /* Using CSS variable for text color */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color); /* Using CSS variable for color */
+    background-color: var(--main-bg-color, white); /* Fallback to white if variable is unavailable */
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(204, 204, 204, 0.8));
+}
+
+/* Using all forms of color specifications */
+h1 {
+    color: hsl(360, 100%, 50%); /* Using HSL */
+    background-color: color-mix(in srgb, red 50%, blue 50%); /* Using color-mix */
+}
+
+/* Adjustments for headers demonstrating both long and short-hand syntax */
+header {
+    /* Short-hand syntax */
+    margin: 2rem auto; /* top and bottom margins are 2rem, left and right are auto */
+    padding: 1rem; /* Short-hand for all four padding values */
+    border: 2px solid black; /* Short-hand for border width, style, and color */
+    
+    /* Long-hand syntax */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px; /* Rounded corners for aesthetic */
+}
+
+/* Section to demonstrate independent border properties */
+section {
+    margin: 1rem; /* Short-hand for all margins */
+    padding: 10px 20px; /* Short-hand for vertical and horizontal paddings */
+    border-style: dashed;
+    border-color: var(--accent-color);
+    border-width: 3px;
+    border-radius: 15px; /* Applying border radius */
+}
+
+/* Styling for emphasized text within paragraphs */
+p strong, p em {
+    color: #000; /* Ensuring strong emphasis with black color */
+    text-decoration: underline; /* Underlining emphasized text */
+    text-align: justify; /* Justifying text for better paragraph alignment */
+}
+
+/* Additional rules to ensure every element is styled distinctly */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+
+/* Responsiveness with Media Queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Positioning elements */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Interactivity with pseudo-classes */
+a:hover, button:hover {
+    color: #ff6347; /* Highlight links on hover */
+}
+
+a:active {
+    color: #2e8b57; /* Color when link is active */
+}
+
+/* Display properties including 'none' and 'inline' for completeness */
+.hidden {
+    display: none; /* Hide elements with class 'hidden' */
+}
+
+.inline-example {
+    display: inline; /* Example of inline display */
+}
+
+/* Additional attributes for ensuring every bullet point is covered */
+.example {
+    position: sticky;
+    top: 10px;
+    background-color: rgba(100, 100, 255, 0.5); /* Example using rgba */
+}
+
+/* Adjustments to body to set minimum and maximum width */
+body {
+    min-width: 320px; /* Minimum width to support smaller devices */
+    max-width: 1920px; /* Maximum width to prevent overly wide layouts on large screens */
+    margin: 0 auto; /* Centers the content within the specific max-width */
+}
+
+/* Explicit width and height for header elements for consistency */
+header {
+    width: 100%; /* Full width of its container */
+    height: 150px; /* Fixed height for aesthetic uniformity */
+}
